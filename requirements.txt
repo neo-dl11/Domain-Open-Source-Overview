@@ -1,0 +1,4 @@
+pyOpenSSL
+requests
+python-whois
+flask
