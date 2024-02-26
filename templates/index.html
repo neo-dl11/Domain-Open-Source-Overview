@@ -17,42 +17,57 @@
         <h1>Website Information</h1>
             <div class="info-item">
                 <span class="info-label">Website Status:</span>
-                <span>{{ website_info['Website Status'] }}</span>
+                <span>{{ website_info[0]['Website Status'] }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Domain Name:</span>
-                <span>{{ website_info['WHOIS Information']['Domain Name'] }}</span>
+                <span>{{ website_info[0]['WHOIS Information']['Domain Name'] }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Creation Date:</span>
-                <span>{{ website_info['WHOIS Information']['Creation Date'] }}</span>
+                <span>{{ website_info[0]['WHOIS Information']['Creation Date'] }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Expiration Date:</span>
-                <span>{{ website_info['WHOIS Information']['Expiration Date'] }}</span>
+                <span>{{ website_info[0]['WHOIS Information']['Expiration Date'] }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Registrar:</span>
-                <span>{{ website_info['WHOIS Information']['Registrar'] }}</span>
+                <span>{{ website_info[0]['WHOIS Information']['Registrar'] }}</span>
             </div>
     </div>
     <div class="container">
         <h1>SSL Informations</h1>
             <div class="info-item">
                 <span class="info-label">Subject :</span>
-                <span>{{ website_info['SSL Certificate Information']['Subject'] }}</span>
+                <span>{{ website_info[0]['SSL Certificate Information']['Subject'] }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Issuer :</span>
-                <span>{{ website_info['SSL Certificate Information']['Issuer'] }}</span>
+                <span>{{ website_info[0]['SSL Certificate Information']['Issuer'] }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Valid From :</span>
-                <span>{{ website_info['SSL Certificate Information']['Valid From'] }}</span>
+                <span>{{ website_info[0]['SSL Certificate Information']['Valid From'] }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Valid until :</span>
-                <span>{{ website_info['SSL Certificate Information']['Valid Until'] }}</span>
+                <span>{{ website_info[0]['SSL Certificate Information']['Valid Until'] }}</span>
+            </div>
+    </div>
+    <div class="container">
+        <h1>DNS Record Informations</h1>
+            <div class="info-item">
+                <span class="info-label">A Records :</span>
+                <span>{{ website_info[1]['A_records'] }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">MX Records :</span>
+                <span>{{ website_info[1]['MX_records'] }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">TXT Records :</span>
+                <span>{{ website_info[1]['TXT_records'] }}</span>
             </div>
     </div>
 </body>

@@ -71,7 +71,6 @@ def check_website_status(url, domain):
         else:
             whois_obj = WhoisInfo("N/A", "N/A", "N/A", "N/A")
 
-        # SSL Certificate Information
         try:
             cert = ssl.get_server_certificate((domain, 443))
             x509 = crypto.load_certificate(crypto.FILETYPE_PEM, cert)
