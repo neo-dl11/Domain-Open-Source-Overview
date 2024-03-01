@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from subdomains import get_subdomains
 app = Flask(__name__)
 
-from info import get_website_info, normalize_domain
+from domain_tools import get_website_info, normalize_domain
 
 @app.route('/')
 def index():

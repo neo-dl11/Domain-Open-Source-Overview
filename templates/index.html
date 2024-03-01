@@ -76,11 +76,13 @@
         </div>
         <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
             <h1 class="text-xl font-bold mb-4">Reported on a phishing list</h1>
+            <span>{{ website_info[2] }}</span>
         </div>
         <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
             <h1 class="text-xl font-bold mb-4">Geolocation
         </div>
         <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+            <h1 class="text-xl font-bold mb-4">Click here to see subdomains</h1>
             <form action="{{ url_for('subdomains_list', domain=website_info[0]['WHOIS Information']['Domain Name']) }}" method="get">
                <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600" type="submit">View Subdomains</button>
             </form>
