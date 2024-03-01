@@ -10,6 +10,7 @@ a more readable format.
 * SSL informations
 * if the domain was reported in a phishing list
 * DNS records information(s)
+* subdomains list
 
 ## How to start application
 

@@ -2,7 +2,7 @@ from flask import json
 import requests
 
 def check_google_safe_browsing(url):
-    api_key = "AIzaSyCU0u6CDG7CFxy85SzuTVQV92PGb5WdVu4"
+    api_key = ""
     url = "https://safebrowsing.googleapis.com/v4/threatMatches:find"
     payload = {
         "threatInfo": {
@@ -20,7 +20,7 @@ def check_google_safe_browsing(url):
     return {"phishing": False}
 
 def check_urlscan(url):
-    api_key = "e41df61a-c8c2-4307-af1f-f4e155dac7d6"
+    api_key = ""
     url = f"https://urlscan.io/api/v1/scan/"
     payload = {"url": url}
     headers = {"API-Key": api_key}
@@ -49,7 +49,7 @@ def check_phishing(url):
     
     return {"phishing_detected": phishing_detected, "sources": sources, "details": details}
 
-url = "https://boursorama.com"
+url = ""
 result = check_phishing(url)
 if result["phishing_detected"]:
     print("Phishing detected!")
