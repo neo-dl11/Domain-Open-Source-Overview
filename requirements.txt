@@ -3,3 +3,5 @@ requests
 python-whois
 flask
 dnspython
+socket
+sublist3r
