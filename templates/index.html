@@ -1,59 +1,95 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>osint test 1</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <form action="/" method="GET">
-            <label for="domain">Enter a domain:</label>
-            <input type="text" id="domain" name="domain">
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    <div class="container">
-        <h1>Website Information</h1>
-            <div class="info-item">
-                <span class="info-label">Website Status:</span>
-                <span>{{ website_info['Website Status'] }}</span>
+
+<body class="bg-gray-900 text-white width">
+    <div class="container-wrapper w-full  mx-auto p-4">
+        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+            <form action="/" method="GET">
+                <label for="domain" class="block mb-2">Enter a domain:</label>
+                <input type="text" id="domain" name="domain" class="block w-full border border-gray-300 rounded-md py-2 px-4 mb-2">
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Submit</button>
+            </form>
+        </div>
+        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+            <h1 class="text-xl font-bold mb-4">Website Information</h1>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Website Status:</span>
+                <span>{{ website_info[0]['Website Status'] }}</span>
             </div>
-            <div class="info-item">
-                <span class="info-label">Domain Name:</span>
-                <span>{{ website_info['WHOIS Information']['Domain Name'] }}</span>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Domain Name:</span>
+                <span>{{ website_info[0]['WHOIS Information']['Domain Name'] }}</span>
             </div>
-            <div class="info-item">
-                <span class="info-label">Creation Date:</span>
-                <span>{{ website_info['WHOIS Information']['Creation Date'] }}</span>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Creation Date:</span>
+                <span>{{ website_info[0]['WHOIS Information']['Creation Date'] }}</span>
             </div>
-            <div class="info-item">
-                <span class="info-label">Expiration Date:</span>
-                <span>{{ website_info['WHOIS Information']['Expiration Date'] }}</span>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Expiration Date:</span>
+                <span>{{ website_info[0]['WHOIS Information']['Expiration Date'] }}</span>
             </div>
-            <div class="info-item">
-                <span class="info-label">Registrar:</span>
-                <span>{{ website_info['WHOIS Information']['Registrar'] }}</span>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Registrar:</span>
+                <span>{{ website_info[0]['WHOIS Information']['Registrar'] }}</span>
             </div>
-    </div>
-    <div class="container">
-        <h1>SSL Informations</h1>
-            <div class="info-item">
-                <span class="info-label">Subject :</span>
-                <span>{{ website_info['SSL Certificate Information']['Subject'] }}</span>
+        </div>
+        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+            <h1 class="text-xl font-bold mb-4">SSL Informations</h1>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Subject :</span>
+                <span>{{ website_info[0]['SSL Certificate Information']['Subject'] }}</span>
             </div>
-            <div class="info-item">
-                <span class="info-label">Issuer :</span>
-                <span>{{ website_info['SSL Certificate Information']['Issuer'] }}</span>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Issuer :</span>
+                <span>{{ website_info[0]['SSL Certificate Information']['Issuer'] }}</span>
             </div>
-            <div class="info-item">
-                <span class="info-label">Valid From :</span>
-                <span>{{ website_info['SSL Certificate Information']['Valid From'] }}</span>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Valid From :</span>
+                <span>{{ website_info[0]['SSL Certificate Information']['Valid From'] }}</span>
             </div>
-            <div class="info-item">
-                <span class="info-label">Valid until :</span>
-                <span>{{ website_info['SSL Certificate Information']['Valid Until'] }}</span>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Valid until :</span>
+                <span>{{ website_info[0]['SSL Certificate Information']['Valid Until'] }}</span>
             </div>
+        </div>
+        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4 truncate whitespace-normal">
+            <h1 class="text-xl font-bold mb-4">DNS Record Informations</h1>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">A Records :</span>
+                <span>{{ website_info[1]['A_records'] }}</span>
+            </div>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">MX Records :</span>
+                <span>{{ website_info[1]['MX_records'] }}</span>
+            </div>
+            <div class="info-item mb-2 whitespace-normal">
+                <span class="info-label font-semibold">TXT Records :</span>
+                <span>{{ website_info[1]['TXT_records'] }}</span>
+            </div>
+        </div>
+        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+            <h1 class="text-xl font-bold mb-4">Reported on a phishing list</h1>
+            <span>{{ website_info[2] }}</span>
+        </div>
+        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+            <h1 class="text-xl font-bold mb-4">Geolocation
+        </div>
+        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+            <h1 class="text-xl font-bold mb-4">Click here to see subdomains</h1>
+            <form action="{{ url_for('subdomains_list', domain=website_info[0]['WHOIS Information']['Domain Name']) }}" method="get">
+               <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600" type="submit">View Subdomains</button>
+            </form>
+        </div>
+        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4"> 
+            <h1 class="text-xl font-bold mb-4">Others Informations</h1>
+        </div>
     </div>
 </body>
 </html>

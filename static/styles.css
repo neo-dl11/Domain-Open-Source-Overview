@@ -4,14 +4,23 @@ body {
     padding: 0;
     background-color: #202020;
 }
+
+.container-wrapper {
+
+    display: flex;
+    flex-wrap: wrap;     
+    justify-content: space-around;
+}
+
 .container {
-    max-width: 800px;
-    margin: 50px auto;
+    width: calc(40% - 1px); 
+    margin: 10px; 
     padding: 20px;
     background-color: #99CCFF;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     border-radius: 5px;
 }
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -35,4 +44,18 @@ h1 {
 }
 .info-label {
     font-weight: bold;
+}
+
+.button {
+  background-color: #04026f; /* Green background */
+  border: none; /* No border */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Display as inline block */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 10px; /* Rounded corners */
 }
