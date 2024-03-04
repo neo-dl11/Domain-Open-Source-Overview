@@ -8,9 +8,15 @@ a more readable format.
 
 * infos from the Whois
 * SSL informations
-* if the domain was reported in a phishing list
+* Informations retrieved from the site
 * DNS records information(s)
 * subdomains list
+* if the domain was reported in a phishing list 
+* some posts retrieved from social networks containing the domain name
+
+PS : some features require API keys, so you will need to replace the contents of the variables with your own keys
+(phishing > go on google safe browsing, social media content > reddit)
+
 
 ## How to start application
 

@@ -21,8 +21,8 @@ def check_google_safe_browsing(domain, api_key):
     params = {'key': api_key}
 
     response = requests.post(url, headers=headers, params=params, json=payload)
-    reported = (f"The domain '{domain}' is on the google phishing list.")
-    not_reported = (f"The domain '{domain}' is not on the google phishing list.")
+    reported = (f"⚠️T the domain '{domain}' is on the google phishing list.")
+    not_reported = (f"✅  The domain '{domain}' is not on the google phishing list.")
 
     if response.ok:
         data = response.json()

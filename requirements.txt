@@ -5,3 +5,5 @@ flask
 dnspython
 socket
 sublist3r
+praw
+beautifulsoup4

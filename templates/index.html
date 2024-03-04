@@ -60,6 +60,21 @@
             </div>
         </div>
         <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4 truncate whitespace-normal">
+            <h1 class="text-xl font-bold mb-4">Website content</h1>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Title :</span>
+                <span>{{ website_info[3]['title'] }}</span>
+            </div>
+            <div class="info-item mb-2">
+                <span class="info-label font-semibold">Keywords :</span>
+                <span>{{ website_info[3]['keywords'] }}</span>
+            </div>
+            <div class="info-item mb-2 whitespace-normal">
+                <span class="info-label font-semibold">Description :</span>
+                <span>{{ website_info[3]['description'] }}</span>
+            </div>
+        </div>
+        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4 truncate whitespace-normal">
             <h1 class="text-xl font-bold mb-4">DNS Record Informations</h1>
             <div class="info-item mb-2">
                 <span class="info-label font-semibold">A Records :</span>
@@ -79,16 +94,25 @@
             <span>{{ website_info[2] }}</span>
         </div>
         <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
-            <h1 class="text-xl font-bold mb-4">Geolocation
-        </div>
-        <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4">
             <h1 class="text-xl font-bold mb-4">Click here to see subdomains</h1>
             <form action="{{ url_for('subdomains_list', domain=website_info[0]['WHOIS Information']['Domain Name']) }}" method="get">
                <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600" type="submit">View Subdomains</button>
             </form>
         </div>
         <div class="container bg-gray-800 rounded-lg shadow-md p-6 mb-4"> 
-            <h1 class="text-xl font-bold mb-4">Others Informations</h1>
+            <h1 class="text-xl font-bold mb-4">Some mentions on social networks</h1>
+            <span class="text-xl info-label font-semibold">Reddit :</span>
+            <ul class="list-disc">
+                {% for post in social_media_info %}
+                    <li> {{ post }} </li>
+                {% endfor %}
+            </ul>
+            <span class="text-xl info-label font-semibold">Twitter :</span>
+            <ul>
+            </ul>
+            <span class="text-xl info-label font-semibold">Facebook :</span>
+            <ul>
+            </ul>
         </div>
     </div>
 </body>

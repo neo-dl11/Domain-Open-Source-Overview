@@ -3,14 +3,16 @@ from flask import Flask, render_template, request, redirect, url_for
 from subdomains import get_subdomains
 app = Flask(__name__)
 
-from domain_tools import get_website_info, normalize_domain
+from domain_tools import get_website_info, normalize_domain, get_socialmedia_infos
 
 @app.route('/')
 def index():
     domain = request.args.get('domain', 'example.com')
-    website_info = get_website_info(domain)
+    normalized_domain = normalize_domain(domain)
+    website_info = get_website_info(normalized_domain)
+    social_media_info = get_socialmedia_infos(normalized_domain)
     if website_info:
-        return render_template('index.html', website_info=website_info)
+        return render_template('index.html', website_info=website_info, social_media_info=social_media_info)
     else:
         return "Error fetching website information"
 
